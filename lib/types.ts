@@ -36,3 +36,21 @@ export interface DashboardData {
   };
   projects: DashboardProject[];
 }
+
+export interface ProjectIncidentCounts {
+  total: number;
+  critical: number;
+  medium: number;
+  low: number;
+}
+
+export interface ProjectListItem {
+  id: string;
+  name: string;
+  description: string;
+  manager: string;
+  incidents: ProjectIncidentCounts;
+  /** Projects list only ever shows these three tiers (no "high"). */
+  severity: "critical" | "medium" | "low";
+  lastSynced: string;
+}

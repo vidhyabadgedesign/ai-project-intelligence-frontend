@@ -91,7 +91,7 @@ export function ProjectSummaryCard({ project }: ProjectSummaryCardProps) {
                     </p>
                     <p>
                       {"L: "}
-                      <span className="font-semibold text-low">{source.low}</span>
+                      <span className="font-semibold text-low abc">{source.low}</span>
                     </p>
                   </div>
                 </div>

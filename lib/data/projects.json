@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "id": "bosso-platform",
+    "name": "BOSSO Platform",
+    "description": "Smart lighting mobile app",
+    "manager": "Sarah Chen",
+    "incidents": { "total": 19, "critical": 8, "medium": 6, "low": 5 },
+    "severity": "critical",
+    "lastSynced": "Today, 10:45 AM"
+  },
+  {
+    "id": "britebird-lighting",
+    "name": "Britebird Lighting",
+    "description": "Customer and sales automation.",
+    "manager": "Priya Sharma",
+    "incidents": { "total": 8, "critical": 1, "medium": 3, "low": 4 },
+    "severity": "medium",
+    "lastSynced": "Yesterday, 12:45 PM"
+  },
+  {
+    "id": "pallium",
+    "name": "Pallium",
+    "description": "Secure enterprise data storage.",
+    "manager": "Jammy L",
+    "incidents": { "total": 10, "critical": 3, "medium": 4, "low": 3 },
+    "severity": "critical",
+    "lastSynced": "08 Jul 2026, 9:15 AM"
+  },
+  {
+    "id": "gargoyle-project",
+    "name": "Gargoyle Project",
+    "description": "Renewable energy management tool",
+    "manager": "Liam O'Connor",
+    "incidents": { "total": 7, "critical": 1, "medium": 4, "low": 2 },
+    "severity": "medium",
+    "lastSynced": "Today, 9:30 AM"
+  },
+  {
+    "id": "smartsys",
+    "name": "Smartsys",
+    "description": "Brain health and fitness monitoring",
+    "manager": "Maya Lin",
+    "incidents": { "total": 12, "critical": 5, "medium": 2, "low": 5 },
+    "severity": "critical",
+    "lastSynced": "Yesterday, 4:20 PM"
+  },
+  {
+    "id": "pulsepay",
+    "name": "PulsePay",
+    "description": "Contactless payment gateway",
+    "manager": "Carlos Mendez",
+    "incidents": { "total": 15, "critical": 3, "medium": 7, "low": 5 },
+    "severity": "critical",
+    "lastSynced": "08 Jul 2026, 3:45 PM"
+  },
+  {
+    "id": "skill-sync",
+    "name": "Skill Sync",
+    "description": "Interactive storytelling platform",
+    "manager": "Ana Ribeiro",
+    "incidents": { "total": 4, "critical": 0, "medium": 2, "low": 2 },
+    "severity": "low",
+    "lastSynced": "Today, 11:00 AM"
+  },
+  {
+    "id": "sd-biocare",
+    "name": "SD Biocare",
+    "description": "AI-powered meditation app",
+    "manager": "Tomoko Saito",
+    "incidents": { "total": 18, "critical": 4, "medium": 7, "low": 7 },
+    "severity": "critical",
+    "lastSynced": "Yesterday, 7:30 AM"
+  },
+  {
+    "id": "fleetsync",
+    "name": "FleetSync",
+    "description": "Vehicle fleet tracking software",
+    "manager": "Ravi Patel",
+    "incidents": { "total": 10, "critical": 3, "medium": 5, "low": 2 },
+    "severity": "medium",
+    "lastSynced": "08 Jul 2026, 8:00 AM"
+  },
+  {
+    "id": "prisma-insight",
+    "name": "Prisma Insight",
+    "description": "Smart water quality monitoring system",
+    "manager": "Elena Garcia",
+    "incidents": { "total": 7, "critical": 1, "medium": 4, "low": 2 },
+    "severity": "medium",
+    "lastSynced": "Today, 1:15 PM"
+  }
+]
