@@ -1,0 +1,99 @@
+{
+  "briefingDate": "2025-05-15",
+  "totalProjects": 3,
+  "criticalProjectCount": 1,
+  "mediumRiskCount": 2,
+  "totalIncidents": 14,
+  "narrative": {
+    "highlightProjectName": "BOSSO Platform"
+  },
+  "projects": [
+    {
+      "id": "bosso-platform",
+      "name": "BOSSO Platform",
+      "severity": "critical",
+      "description": "Overall project progress is stable, though unresolved dependencies and pending approvals may delay upcoming sprint commitments.",
+      "sources": {
+        "slack": { "critical": 2, "medium": 1, "low": 0 },
+        "jira": { "critical": 1, "medium": 0, "low": 0 },
+        "email": { "critical": 1, "medium": 1, "low": 0 },
+        "teams": { "critical": 0, "medium": 0, "low": 0 },
+        "calls": { "critical": 1, "medium": 0, "low": 0 }
+      },
+      "actionPoints": [
+        "Review critical delivery risks.",
+        "Resolve cross-team blockers",
+        "Approve pending project decisions.",
+        "Optimize resource allocation.",
+        "Validate release readiness.",
+        "Monitor project risk trends."
+      ],
+      "categories": [
+        { "category": "Communication", "count": 3 },
+        { "category": "Delivery Delays", "count": 2 },
+        { "category": "Cross team dependency", "count": 1 },
+        { "category": "Technical Debt", "count": 1 },
+        { "category": "Sprint Spillover", "count": 2 },
+        { "category": "Blockers", "count": 2 }
+      ]
+    },
+    {
+      "id": "pallium",
+      "name": "Pallium",
+      "severity": "medium",
+      "description": "Most milestones are on track, though data integration dependencies may impact the next release timeline.",
+      "sources": {
+        "slack": { "critical": 2, "medium": 1, "low": 0 },
+        "jira": { "critical": 2, "medium": 1, "low": 1 },
+        "email": { "critical": 1, "medium": 3, "low": 1 },
+        "teams": { "critical": 1, "medium": 1, "low": 0 },
+        "calls": { "critical": 1, "medium": 0, "low": 1 }
+      },
+      "actionPoints": [
+        "Review AI insight accuracy.",
+        "Validate data synchronization.",
+        "Optimize engineering capacity.",
+        "Approve upcoming release scope.",
+        "Track platform reliability metrics.",
+        "Monitor platform performance"
+      ],
+      "categories": [
+        { "category": "Communication", "count": 3 },
+        { "category": "Delivery Delays", "count": 2 },
+        { "category": "Cross team dependency", "count": 2 },
+        { "category": "Scope Change", "count": 1 },
+        { "category": "Sprint Spillover", "count": 0 },
+        { "category": "Blockers", "count": 2 }
+      ]
+    },
+    {
+      "id": "skill-sync",
+      "name": "Skill Sync",
+      "severity": "medium",
+      "description": "Most milestones are on track, though data integration dependencies may impact the next release timeline.",
+      "sources": {
+        "slack": { "critical": 2, "medium": 1, "low": 0 },
+        "jira": { "critical": 2, "medium": 1, "low": 1 },
+        "email": { "critical": 1, "medium": 3, "low": 1 },
+        "teams": { "critical": 1, "medium": 1, "low": 0 },
+        "calls": { "critical": 1, "medium": 0, "low": 1 }
+      },
+      "actionPoints": [
+        "Review AI insight accuracy.",
+        "Validate data synchronization.",
+        "Optimize engineering capacity.",
+        "Approve upcoming release scope.",
+        "Track platform reliability metrics.",
+        "Monitor platform performance"
+      ],
+      "categories": [
+        { "category": "Communication", "count": 3 },
+        { "category": "Delivery Delays", "count": 2 },
+        { "category": "Cross team dependency", "count": 2 },
+        { "category": "Scope Change", "count": 1 },
+        { "category": "Sprint Spillover", "count": 0 },
+        { "category": "Blockers", "count": 2 }
+      ]
+    }
+  ]
+}
