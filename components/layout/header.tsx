@@ -30,7 +30,7 @@ function initials(name: string) {
 
 export function Header({ title, user, actions, onSignOut }: HeaderProps) {
   return (
-    <header className="flex h-topbar shrink-0 items-center justify-between bg-surface px-6 shadow-topbar">
+    <header className="relative z-10 flex h-topbar shrink-0 items-center justify-between bg-surface px-6 shadow-topbar">
       <div className="font-semibold text-lg text-text-primary">{title}</div>
 
       <div className="flex items-center gap-3">

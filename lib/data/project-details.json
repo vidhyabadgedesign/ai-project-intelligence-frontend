@@ -1,1 +1,347 @@
-[]
+{
+  "bosso-platform": {
+    "id": "bosso-platform",
+    "name": "BOSSO Platform",
+    "severity": "critical",
+    "lastSyncedLabel": "10 minutes ago",
+    "summary": {
+      "date": "15 Jul 2026",
+      "narrative": "Today's analysis identified increased coordination activity across engineering and product teams. Two critical delivery risks were detected due to unresolved cross-team dependencies and pending design approvals. Additionally, three ongoing discussions in the #bosso-engineering channel suggest potential scope changes that could impact the backend migration timeline. Most development work is progressing as planned, but a few blockers may affect the upcoming sprint commitments if not addressed.",
+      "sourceStats": {
+        "slack": { "total": 8, "critical": 3, "medium": 2, "low": 3 },
+        "jira": { "total": 5, "critical": 2, "medium": 2, "low": 1 },
+        "email": { "total": 4, "critical": 2, "medium": 1, "low": 1 },
+        "calls": { "total": 2, "critical": 1, "medium": 1, "low": 0 }
+      },
+      "actionPoints": [
+        "Escalate API dependency because onboarding tasks are blocked.",
+        "Review sprint scope because new feature requests increased workload.",
+        "Complete design approval because development is waiting.",
+        "Confirm client requirements because the project scope is unclear.",
+        "Schedule release review because delivery risks are increasing.",
+        "Align engineering teams because coordination gaps were detected.",
+        "Finalize implementation plan because technical decisions are pending.",
+        "Review resource allocation because team capacity is constrained."
+      ],
+      "categories": [
+        { "category": "Communication", "count": 3 },
+        { "category": "Delivery Delays", "count": 2 },
+        { "category": "Cross team dependency", "count": 1 },
+        { "category": "Sprint Spillover", "count": 2 },
+        { "category": "Blockers", "count": 2 },
+        { "category": "Technical Debt", "count": 1 }
+      ]
+    },
+    "incidents": [
+      {
+        "id": "inc-1",
+        "title": "Critical tasks blocked by dependencies",
+        "description": "Multiple high-priority development tasks that are currently blocked due to unresolved dependencies on the Platform Services team. Engineers have repeatedly discussed the blocker in Slack, while several Jira stories remain in a Blocked state, indicating a growing risk to the current sprint and the planned release timeline.",
+        "severityLabel": "Critical",
+        "severityStyle": "critical",
+        "sources": ["slack", "jira", "email"],
+        "evidenceCount": 6,
+        "detected": "Today, 9:45 AM"
+      },
+      {
+        "id": "inc-2",
+        "title": "Engineering Team Waiting for Design Decisions",
+        "description": "Development on the onboarding flow is blocked until the design team finalizes sign-off on the remaining screens.",
+        "severityLabel": "Critical",
+        "severityStyle": "critical",
+        "sources": ["jira", "email"],
+        "evidenceCount": 3,
+        "detected": "Yesterday, 9:45 AM"
+      },
+      {
+        "id": "inc-3",
+        "title": "Client Change Requests Impacting Scope",
+        "description": "The client has requested additional dashboard functionality that falls outside the originally agreed project scope.",
+        "severityLabel": "Low",
+        "severityStyle": "low",
+        "sources": ["slack", "jira"],
+        "evidenceCount": 7,
+        "detected": "08 Jul 2026, 3:45 PM"
+      },
+      {
+        "id": "inc-4",
+        "title": "Unresolved Cross-Team Dependencies",
+        "description": "Sprint progress is being slowed by an unresolved dependency on the Platform Services team.",
+        "severityLabel": "Medium",
+        "severityStyle": "high",
+        "sources": ["slack"],
+        "evidenceCount": 2,
+        "detected": "Today, 10:20 AM"
+      },
+      {
+        "id": "inc-5",
+        "title": "Multiple High-Priority Jira Tasks Overdue",
+        "description": "Several high-priority tickets have passed their due date, raising risk to the current release timeline.",
+        "severityLabel": "Medium",
+        "severityStyle": "high",
+        "sources": ["email", "calls"],
+        "evidenceCount": 6,
+        "detected": "Today, 10:30 AM"
+      },
+      {
+        "id": "inc-6",
+        "title": "Engineering Capacity Overloaded",
+        "description": "Current sprint workload exceeds available engineering capacity, putting planned commitments at risk.",
+        "severityLabel": "Low",
+        "severityStyle": "low",
+        "sources": ["jira"],
+        "evidenceCount": 4,
+        "detected": "Today, 10:40 AM"
+      },
+      {
+        "id": "inc-7",
+        "title": "Documentation Updates Behind Schedule",
+        "description": "Technical documentation has fallen behind the current release schedule and needs dedicated time to catch up.",
+        "severityLabel": "Low",
+        "severityStyle": "critical",
+        "sources": ["slack", "jira", "email"],
+        "evidenceCount": 3,
+        "detected": "Yesterday, 4:15 PM"
+      },
+      {
+        "id": "inc-8",
+        "title": "Pending Security Review for New Features",
+        "description": "New onboarding features are awaiting a required security review before they can ship.",
+        "severityLabel": "Medium",
+        "severityStyle": "critical",
+        "sources": ["jira"],
+        "evidenceCount": 4,
+        "detected": "Today, 9:50 AM"
+      },
+      {
+        "id": "inc-9",
+        "title": "Design Team Backlog Growing",
+        "description": "The design team's review backlog continues to grow, delaying downstream engineering work.",
+        "severityLabel": "Medium",
+        "severityStyle": "high",
+        "sources": ["slack"],
+        "evidenceCount": 5,
+        "detected": "Yesterday, 11:20 AM"
+      },
+      {
+        "id": "inc-10",
+        "title": "QA Testing Delays Due to Environment Setup",
+        "description": "QA testing is delayed while the test environment is reconfigured, pushing back the current test pass.",
+        "severityLabel": "Critical",
+        "severityStyle": "low",
+        "sources": ["jira"],
+        "evidenceCount": 5,
+        "detected": "Today, 11:00 AM"
+      }
+    ],
+    "evidence": {
+      "inc-1": {
+        "slack": [
+          {
+            "title": "Authentication API Dependency",
+            "description": "Backend team is waiting for the Platform Services API before onboarding development can continue.",
+            "channel": "bosso-engineering",
+            "timestamp": "Today, 9:45 AM",
+            "quote": "We're still waiting for the authentication API from the Platform team. BOSSO onboarding can't move forward until it's available."
+          },
+          {
+            "title": "API Contract Not Finalized",
+            "description": "Multiple user stories remain blocked until the API contract is finalized by the Platform team.",
+            "channel": "bosso-Internal",
+            "timestamp": "Today, 11:40 AM",
+            "quote": "Three user stories are blocked because the new API contract hasn't been finalized."
+          },
+          {
+            "title": "Holiday Feature Delivery Risk",
+            "description": "Engineering team discussed potential delays to the Holiday Lighting feature due to unresolved dependencies.",
+            "channel": "bosso-design",
+            "timestamp": "July 2, 2025, 9:42",
+            "quote": "This dependency is now affecting the Holiday Lighting feature. We may miss the sprint target if it's delayed further."
+          }
+        ],
+        "jira": [
+          {
+            "title": "Integrate Authentication API to unblock onboarding flow",
+            "description": "",
+            "channel": "BOSSO-142",
+            "timestamp": "",
+            "quote": ""
+          },
+          {
+            "title": "Complete User Onboarding implementation",
+            "description": "",
+            "channel": "BOSSO-228",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": [
+          {
+            "title": "Platform Services API Access Request",
+            "description": "Engineering team requested API access to unblock onboarding development.",
+            "channel": "Ethan Wright",
+            "timestamp": "July 2, 2025, 9:42",
+            "quote": "Hi team, We need API access for the onboarding integration. Please let us know when we can get access. This is blocking multiple dev tasks."
+          }
+        ]
+      },
+      "inc-2": {
+        "slack": [
+          {
+            "title": "Design Sign-off Pending",
+            "description": "Engineering is blocked waiting on final design approval for the onboarding screens.",
+            "channel": "bosso-design",
+            "timestamp": "Yesterday, 9:45 AM",
+            "quote": "Still waiting on design sign-off — dev can't start the onboarding screens without it."
+          }
+        ],
+        "jira": [
+          {
+            "title": "Finalize onboarding screen designs",
+            "description": "",
+            "channel": "BOSSO-155",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": [
+          {
+            "title": "Design Review Follow-up",
+            "description": "Product manager followed up on the pending design review.",
+            "channel": "Maria Alonso",
+            "timestamp": "Yesterday, 10:10 AM",
+            "quote": "Following up on the design review — can we get this signed off today so engineering isn't blocked?"
+          }
+        ]
+      },
+      "inc-3": {
+        "slack": [
+          {
+            "title": "Client Requested Scope Addition",
+            "description": "Client asked for two additional dashboard widgets outside the original scope.",
+            "channel": "bosso-client-success",
+            "timestamp": "08 Jul 2026, 3:45 PM",
+            "quote": "Client just asked for two more widgets on the dashboard — this wasn't in the original scope."
+          }
+        ],
+        "jira": [
+          {
+            "title": "Evaluate scope change request from client",
+            "description": "",
+            "channel": "BOSSO-301",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": []
+      },
+      "inc-4": {
+        "slack": [
+          {
+            "title": "Blocked on Platform Services Team",
+            "description": "Cross-team dependency on Platform Services is delaying the current sprint.",
+            "channel": "bosso-engineering",
+            "timestamp": "Today, 10:20 AM",
+            "quote": "We're still blocked on the Platform Services team for this one."
+          }
+        ],
+        "jira": [],
+        "email": []
+      },
+      "inc-5": {
+        "slack": [],
+        "jira": [],
+        "email": [
+          {
+            "title": "Overdue Jira Tickets Follow-up",
+            "description": "Reminder sent about several overdue high-priority tickets.",
+            "channel": "Ravi Patel",
+            "timestamp": "Today, 10:30 AM",
+            "quote": "These tickets are now overdue — can we get an updated ETA today?"
+          }
+        ]
+      },
+      "inc-6": {
+        "slack": [],
+        "jira": [
+          {
+            "title": "Rebalance sprint workload across engineers",
+            "description": "",
+            "channel": "BOSSO-310",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": []
+      },
+      "inc-7": {
+        "slack": [
+          {
+            "title": "Docs Falling Behind Feature Work",
+            "description": "Documentation updates have slipped behind the current release schedule.",
+            "channel": "bosso-engineering",
+            "timestamp": "Yesterday, 4:15 PM",
+            "quote": "Docs are falling behind again — we should block time for this before the release."
+          }
+        ],
+        "jira": [
+          {
+            "title": "Update onboarding documentation",
+            "description": "",
+            "channel": "BOSSO-266",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": [
+          {
+            "title": "Documentation Status Check-in",
+            "description": "Check-in email about outstanding documentation tasks.",
+            "channel": "Priya Sharma",
+            "timestamp": "Yesterday, 4:15 PM",
+            "quote": "Checking in on the outstanding docs tasks — do we have a revised timeline?"
+          }
+        ]
+      },
+      "inc-8": {
+        "slack": [],
+        "jira": [
+          {
+            "title": "Schedule security review for new onboarding features",
+            "description": "",
+            "channel": "BOSSO-289",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": []
+      },
+      "inc-9": {
+        "slack": [
+          {
+            "title": "Design Backlog Keeps Growing",
+            "description": "Design team flagged a growing backlog of unreviewed requests.",
+            "channel": "bosso-design",
+            "timestamp": "Yesterday, 11:20 AM",
+            "quote": "Our backlog keeps growing — we need another designer on this project."
+          }
+        ],
+        "jira": [],
+        "email": []
+      },
+      "inc-10": {
+        "slack": [],
+        "jira": [
+          {
+            "title": "Environment setup blocking QA test pass",
+            "description": "",
+            "channel": "BOSSO-244",
+            "timestamp": "",
+            "quote": ""
+          }
+        ],
+        "email": []
+      }
+    }
+  }
+}

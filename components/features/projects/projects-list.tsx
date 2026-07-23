@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Search } from "@/components/ui/search";
 import { buttonVariants } from "@/components/ui/button";
@@ -37,61 +38,77 @@ function IncidentCounts({ incidents }: { incidents: ProjectListItem["incidents"]
 }
 
 export function ProjectsList({ projects }: { projects: ProjectListItem[] }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
 
-  const filtered = useMemo(() => {
+  const filtered = projects.filter((project) => {
     const q = query.trim().toLowerCase();
-    if (!q) return projects;
-    return projects.filter(
-      (project) => project.name.toLowerCase().includes(q) || project.manager.toLowerCase().includes(q),
-    );
-  }, [projects, query]);
+    if (!q) return true;
+    return project.name.toLowerCase().includes(q) || project.manager.toLowerCase().includes(q);
+  });
 
-  // Only 10 mock projects exist, so they all fit on one real page — but the
-  // reference design shows a second page control, so the default (unfiltered)
-  // view keeps a second, empty page rather than hiding pagination entirely.
+  // The 10 mock projects exactly fill page 1 (matching Figma), and Figma shows
+  // a second page control even though no further mock data exists for it — the
+  // unfiltered view keeps a second, empty page rather than hiding pagination.
   // Search results paginate honestly against however many actually match.
   const pageCount = query.trim() ? Math.max(1, Math.ceil(filtered.length / PAGE_SIZE)) : 2;
   const currentPage = Math.min(page, pageCount);
   const paginated = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Search
-          value={query}
-          onChange={(event) => {
-            setQuery(event.target.value);
-            setPage(1);
-          }}
-          placeholder="Search projects.."
-          className="sm:max-w-xs"
-        />
-        <Link href="/projects/new" className={cn(buttonVariants({ variant: "primary" }), "sm:w-auto")}>
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <div className="w-[178px] shrink-0">
+          <Search
+            value={query}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setPage(1);
+            }}
+            placeholder="Search projects.."
+          />
+        </div>
+        <Link
+          href="/projects/new"
+          className={cn(buttonVariants({ variant: "primary" }), "h-9 px-4 text-sm font-semibold")}
+        >
           Create Project
         </Link>
       </div>
 
-      {paginated.length === 0 ? (
-        <EmptyState
-          title={query ? "No projects match your search" : "No more projects"}
-          description={query ? "Try a different name or manager." : undefined}
-        />
-      ) : (
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[30%]">Project</TableHead>
-              <TableHead className="w-[16%]">Manager</TableHead>
-              <TableHead className="w-[20%]">Incidents</TableHead>
-              <TableHead className="w-[12%]">Severity</TableHead>
-              <TableHead>Last Synced</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {paginated.map((project) => (
-              <TableRow key={project.id} className="transition-colors hover:bg-surface-muted">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[364px]">Project</TableHead>
+            <TableHead className="w-[202px]">Manager</TableHead>
+            <TableHead className="w-[260px]">Incidents</TableHead>
+            <TableHead className="w-[129px]">Severity</TableHead>
+            <TableHead className="w-[192px]">Last Synced</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {paginated.length === 0 ? (
+            <tr>
+              <td colSpan={5}>
+                <EmptyState
+                  title={query ? "No projects match your search" : "No more projects"}
+                  description={query ? "Try a different name or manager." : undefined}
+                />
+              </td>
+            </tr>
+          ) : (
+            paginated.map((project) => (
+              <TableRow
+                key={project.id}
+                role="link"
+                tabIndex={0}
+                onClick={() => router.push(`/projects/${project.id}`)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") router.push(`/projects/${project.id}`);
+                }}
+                className="cursor-pointer transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
+              >
                 <TableCell>
                   <div className="flex flex-col gap-1">
                     <span className="font-medium text-text-primary">{project.name}</span>
@@ -107,14 +124,19 @@ export function ProjectsList({ projects }: { projects: ProjectListItem[] }) {
                 </TableCell>
                 <TableCell className="whitespace-nowrap">{project.lastSynced}</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      )}
-
-      <div className="flex justify-end">
-        <Pagination page={currentPage} pageCount={pageCount} onPageChange={setPage} />
-      </div>
+            ))
+          )}
+        </TableBody>
+        <tfoot>
+          <tr>
+            <td colSpan={5} className="border-t border-border-table p-4">
+              <div className="flex justify-end">
+                <Pagination page={currentPage} pageCount={pageCount} onPageChange={setPage} />
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </Table>
     </div>
   );
 }

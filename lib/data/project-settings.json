@@ -1,1 +1,58 @@
-[]
+{
+  "bosso-platform": {
+    "id": "bosso-platform",
+    "projectName": "BOSSO Platform",
+    "projectManager": "Dev Chen",
+    "managerOptions": ["Dev Chen", "Sarah Chen", "Priya Sharma", "Carlos Mendez"],
+    "teamMembers": [
+      { "name": "Sarah Doe", "email": "sarahd@britebird.com" },
+      { "name": "Alex Rivera", "email": "alex.rivera@britebird.com" },
+      { "name": "Maya Patel", "email": "maya.patel@britebird.com" },
+      { "name": "Liam O'Connor", "email": "" },
+      { "name": "Nina Chen", "email": "" },
+      { "name": "Jamal Thompson", "email": "" },
+      { "name": "Isabella Rossi", "email": "" },
+      { "name": "Ethan Brooks", "email": "" }
+    ],
+    "teamMemberOptions": ["Sarah Doe", "Alex Rivera", "Maya Patel", "Liam O'Connor", "Nina Chen", "Jamal Thompson", "Isabella Rossi", "Ethan Brooks", "Liam Chen", "Priya Sharma"],
+    "terminology": [
+      { "abbreviation": "IoT", "meaning": "Internet of Things" },
+      { "abbreviation": "MVP", "meaning": "Minimum Viable Product" },
+      { "abbreviation": "Auth", "meaning": "Authentication" },
+      { "abbreviation": "JWT", "meaning": "JSON Web Token" },
+      { "abbreviation": "MOQ", "meaning": "Minimum Order Quantity" },
+      { "abbreviation": "CD", "meaning": "Continuous Deployment" },
+      { "abbreviation": "SRS", "meaning": "Software Requirements Specification" },
+      { "abbreviation": "JWT", "meaning": "JSON Web Token" },
+      { "abbreviation": "API", "meaning": "Application Programming Interface" },
+      { "abbreviation": "SDK", "meaning": "Software Development Kit" },
+      { "abbreviation": "UI", "meaning": "User Interface" },
+      { "abbreviation": "UX", "meaning": "User Experience" },
+      { "abbreviation": "SaaS", "meaning": "Software as a Service" },
+      { "abbreviation": "CI", "meaning": "Continuous Integration" },
+      { "abbreviation": "DNS", "meaning": "Domain Name System" },
+      { "abbreviation": "KPI", "meaning": "Key Performance Indicator" }
+    ],
+    "clientEmails": ["client1@bossolighting.com", "client2@bossolighting.com"],
+    "slack": {
+      "connected": true,
+      "channels": ["#bosso-engineering", "#bosso-design", "#bosso-Internal"],
+      "channelOptions": ["#bosso-engineering", "#atlasian-enginnering", "#bosso-design", "#product-ops", "#bosso-Internal", "#frontend-developers"]
+    },
+    "jira": {
+      "connected": true,
+      "apiToken": "atlassian-api-token-8842910"
+    },
+    "teams": {
+      "connected": true,
+      "teams": ["#Bosso Team"],
+      "teamOptions": ["#Bosso Team", "#Bosso Design", "#Bosso QA"]
+    },
+    "calls": {
+      "connected": true
+    },
+    "email": {
+      "connected": true
+    }
+  }
+}

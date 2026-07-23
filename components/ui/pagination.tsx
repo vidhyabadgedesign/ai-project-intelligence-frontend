@@ -20,13 +20,13 @@ export function Pagination({ page, pageCount, onPageChange, className }: Paginat
   if (pageCount <= 1) return null;
 
   return (
-    <nav aria-label="Pagination" className={cn("flex items-center gap-1", className)}>
+    <nav aria-label="Pagination" className={cn("flex items-center gap-0.5", className)}>
       <button
         type="button"
         aria-label="Previous page"
         disabled={page <= 1}
         onClick={() => onPageChange(page - 1)}
-        className="flex size-8 items-center justify-center rounded-xs text-icon transition-colors hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40"
+        className="flex size-6 items-center justify-center rounded-sm text-icon transition-colors hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40"
       >
         <ChevronLeft className="size-4" aria-hidden />
       </button>
@@ -38,10 +38,10 @@ export function Pagination({ page, pageCount, onPageChange, className }: Paginat
           aria-current={p === page ? "page" : undefined}
           onClick={() => onPageChange(p)}
           className={cn(
-            "flex size-8 items-center justify-center rounded-xs text-sm transition-colors",
+            "flex size-6 items-center justify-center font-poppins-sans text-xs font-medium transition-colors",
             p === page
-              ? "bg-primary text-white"
-              : "text-text-primary-alt hover:bg-surface-muted",
+              ? "rounded-full bg-secondary text-white"
+              : "rounded-sm text-[#666666] hover:bg-surface-muted",
           )}
         >
           {p}
@@ -53,7 +53,7 @@ export function Pagination({ page, pageCount, onPageChange, className }: Paginat
         aria-label="Next page"
         disabled={page >= pageCount}
         onClick={() => onPageChange(page + 1)}
-        className="flex size-8 items-center justify-center rounded-xs text-icon transition-colors hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40"
+        className="flex size-6 items-center justify-center rounded-sm text-icon transition-colors hover:bg-surface-muted disabled:pointer-events-none disabled:opacity-40"
       >
         <ChevronRight className="size-4" aria-hidden />
       </button>

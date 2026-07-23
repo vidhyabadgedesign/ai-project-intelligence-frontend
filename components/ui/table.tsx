@@ -3,7 +3,10 @@ import { cn } from "@/lib/utils";
 
 export const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
-    <div className="w-full overflow-x-auto rounded-md border border-border">
+    // outline (not border) so this doesn't consume layout width — a border here
+    // would eat into the exact column-width budget columns are sized to, forcing
+    // an unwanted 1-2px horizontal scrollbar even when content fits exactly.
+    <div className="w-full overflow-x-auto rounded-md outline outline-1 outline-offset-0 outline-border-table">
       <table ref={ref} className={cn("w-full min-w-max border-collapse text-sm", className)} {...props} />
     </div>
   ),
@@ -34,7 +37,7 @@ export const TableHead = forwardRef<HTMLTableCellElement, ThHTMLAttributes<HTMLT
     <th
       ref={ref}
       className={cn(
-        "h-12 whitespace-nowrap px-4 text-left font-medium text-xs text-text-secondary",
+         "bg-[#F5F5F7] h-12 whitespace-nowrap px-4 text-left text-sm font-medium text-text-primary",
         className,
       )}
       {...props}
@@ -45,7 +48,7 @@ TableHead.displayName = "TableHead";
 
 export const TableCell = forwardRef<HTMLTableCellElement, TdHTMLAttributes<HTMLTableCellElement>>(
   ({ className, ...props }, ref) => (
-    <td ref={ref} className={cn("h-[58px] px-4 align-middle text-text-primary-alt", className)} {...props} />
+    <td ref={ref} className={cn("h-[58px] px-4 align-middle text-text-primary", className)} {...props} />
   ),
 );
 TableCell.displayName = "TableCell";

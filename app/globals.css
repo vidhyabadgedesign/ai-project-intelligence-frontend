@@ -60,7 +60,7 @@
 
   /* Shadows */
   --shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.03);
-  --shadow-topbar: 0px 2px 3.3px 0px rgba(0, 0, 0, 0.04);
+  --shadow-topbar: 0px 2px 8px 0px rgba(16, 24, 40, 0.08);
   --shadow-card: 2px 2px 2.7px 0px rgba(0, 0, 0, 0.1);
 
   /* Login brand panel gradient */
