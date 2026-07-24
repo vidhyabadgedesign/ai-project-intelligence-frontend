@@ -47,6 +47,14 @@ export function CreateProjectContent({ options }: CreateProjectContentProps) {
     setTerminology((prev) => [...prev, entry]);
   }
 
+  function handleEditTerminology(index: number, entry: TerminologyEntry) {
+    setTerminology((prev) => prev.map((t, i) => (i === index ? entry : t)));
+  }
+
+  function handleDeleteTerminology(index: number) {
+    setTerminology((prev) => prev.filter((_, i) => i !== index));
+  }
+
   function handleConnect(source: SourceKey) {
     setConnected((prev) => ({ ...prev, [source]: true }));
   }
@@ -65,7 +73,12 @@ export function CreateProjectContent({ options }: CreateProjectContentProps) {
         onRemoveMember={handleRemoveMember}
       />
 
-      <CreateProjectTerminology terminology={terminology} onAddTerminology={handleAddTerminology} />
+      <CreateProjectTerminology
+        terminology={terminology}
+        onAddTerminology={handleAddTerminology}
+        onEditTerminology={handleEditTerminology}
+        onDeleteTerminology={handleDeleteTerminology}
+      />
 
       <ClientEmailsField emails={clientEmails} onChange={setClientEmails} />
 

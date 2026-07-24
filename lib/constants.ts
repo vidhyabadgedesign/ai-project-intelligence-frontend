@@ -4,11 +4,10 @@ export interface NavItem {
   icon: string;
 }
 
-// Sidebar nav items — matches the latest-generation Figma sidebar (Dashboard,
-// Projects). Users is out of scope for the Super Admin module build.
 export const NAV_ITEMS: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: "/icons/nav-dashboard.svg" },
   { label: "Projects", href: "/projects", icon: "/icons/nav-projects.svg" },
+  { label: "Users", href: "/users", icon: "/icons/nav-users.svg" },
 ];
 
 // Mock signed-in user — there is no auth in this build, so this stands in for

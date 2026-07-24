@@ -167,3 +167,22 @@ export interface CreateProjectOptions {
   managerOptions: string[];
   teamMemberOptions: string[];
 }
+
+export type UserRole = "Manager" | "Employee" | "Admin";
+export type UserStatus = "Active" | "Inactive";
+
+export interface UserProjectEmail {
+  project: string;
+  email: string;
+}
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  role: UserRole;
+  projectEmails: UserProjectEmail[];
+  status: UserStatus;
+  lastActive: string;
+}

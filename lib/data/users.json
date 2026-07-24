@@ -1,0 +1,126 @@
+[
+  {
+    "id": "user-1",
+    "firstName": "Sarah",
+    "lastName": "Chen",
+    "email": "sarah.chen@amazatic.com",
+    "role": "Manager",
+    "projectEmails": [
+      { "project": "BOSSO Platform", "email": "sarah.c@bossolighting.com" },
+      { "project": "Britebird Lighting", "email": "sarah.chen@britebird.com" }
+    ],
+    "status": "Active",
+    "lastActive": "2 hours ago"
+  },
+  {
+    "id": "user-2",
+    "firstName": "Marcus",
+    "lastName": "Johnson",
+    "email": "marcus.j@amazatic.com",
+    "role": "Manager",
+    "projectEmails": [
+      { "project": "Skill Sync", "email": "marcus.j@skillsync.com" }
+    ],
+    "status": "Active",
+    "lastActive": "1 hours ago"
+  },
+  {
+    "id": "user-3",
+    "firstName": "Alex",
+    "lastName": "Rivera",
+    "email": "alex.r@amazatic.com",
+    "role": "Employee",
+    "projectEmails": [
+      { "project": "BOSSO Platform", "email": "alex.r@bossolighting.com" }
+    ],
+    "status": "Inactive",
+    "lastActive": "1 week ago"
+  },
+  {
+    "id": "user-4",
+    "firstName": "Maria",
+    "lastName": "Johnson",
+    "email": "maria.j@amazatic.com",
+    "role": "Manager",
+    "projectEmails": [
+      { "project": "SD Biocare", "email": "maria.j@sdbiocare.com" },
+      { "project": "Gargoyle", "email": "maria.j@gargoyle.com" }
+    ],
+    "status": "Active",
+    "lastActive": "2 hours ago"
+  },
+  {
+    "id": "user-5",
+    "firstName": "Brian",
+    "lastName": "Thompson",
+    "email": "brian.t@amazatic.com",
+    "role": "Manager",
+    "projectEmails": [
+      { "project": "Smartsys", "email": "brian.t@smartsys.com" }
+    ],
+    "status": "Active",
+    "lastActive": "15 minutes ago"
+  },
+  {
+    "id": "user-6",
+    "firstName": "Elena",
+    "lastName": "Smith",
+    "email": "elena.s@amazatic.com",
+    "role": "Admin",
+    "projectEmails": [
+      { "project": "BOSSO Platform", "email": "john.d@bossolighting.com" },
+      { "project": "Britebird Lighting", "email": "john.doe@britebird.com" }
+    ],
+    "status": "Inactive",
+    "lastActive": "3 days ago"
+  },
+  {
+    "id": "user-7",
+    "firstName": "David",
+    "lastName": "Lee",
+    "email": "david.l@amazatic.com",
+    "role": "Manager",
+    "projectEmails": [
+      { "project": "Britebird Lighting", "email": "john.doe@britebird.com" }
+    ],
+    "status": "Active",
+    "lastActive": "30 minutes ago"
+  },
+  {
+    "id": "user-8",
+    "firstName": "Katherine",
+    "lastName": "Chen",
+    "email": "katherine.c@amazatic.com",
+    "role": "Employee",
+    "projectEmails": [
+      { "project": "Skill Sync", "email": "katherine.c@skillsync.com" }
+    ],
+    "status": "Active",
+    "lastActive": "1 hour ago"
+  },
+  {
+    "id": "user-9",
+    "firstName": "James",
+    "lastName": "Patel",
+    "email": "james.p@amazatic.com",
+    "role": "Employee",
+    "projectEmails": [
+      { "project": "SD Biocare", "email": "james.p@sdbiocare.com" },
+      { "project": "Britebird Lighting", "email": "john.doe@britebird.com" }
+    ],
+    "status": "Inactive",
+    "lastActive": "2 days ago"
+  },
+  {
+    "id": "user-10",
+    "firstName": "Olivia",
+    "lastName": "Martinez",
+    "email": "olivia.m@amazatic.com",
+    "role": "Admin",
+    "projectEmails": [
+      { "project": "Gargoyle", "email": "olivia.m@gargoyle.com" }
+    ],
+    "status": "Active",
+    "lastActive": "45 minutes ago"
+  }
+]
